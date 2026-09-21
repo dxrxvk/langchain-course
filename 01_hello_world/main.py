@@ -1,3 +1,4 @@
+import os
 from langchain_core.prompts import PromptTemplate
 from langchain_ollama import ChatOllama
 
@@ -22,7 +23,7 @@ Musk was born and raised in a wealthy family in Pretoria , South Africa . His mo
         template=summary_template,
     )
 
-    llm = ChatOllama(model="gpt-oss:20b", temperature=0)
+    llm = ChatOllama(model=os.getenv("OLLAMA_MODEL", "qwen3:1.7b"), temperature=0)
 
     chain = summary_prompt_template | llm
     response = chain.invoke({"information": information})
