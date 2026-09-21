@@ -1,0 +1,21 @@
+# Project 2 — Modern Search Agent. Run with:  uv run --package ai-search 02_ai_search/main.py
+[project]
+name = "ai-search"
+version = "0.1.0"
+description = "Search agent using create_agent with custom tools."
+requires-python = ">=3.14"
+
+# Add this project's own deps here as the course introduces them, e.g.
+#   uv add --package ai-search tavily-python
+dependencies = [
+    "black>=26.5.1",
+    "dotenv>=0.9.9",
+    "isort>=9.0.1",
+    "langchain-ollama>=1.1.0",
+    "langchain-tavily>=0.2.18",
+    "pydantic>=2.13.5",
+    "typing>=3.10.0.0",
+]
+
+[tool.uv]
+package = false
